@@ -1,7 +1,6 @@
 import click
 import joblib
 import pandas as pd
-from sklearn.metrics import r2_score, make_scorer
 
 
 
