@@ -22,14 +22,13 @@ def predict(input_dataset, output_dataset):
     ### -------------------------------------------------- ###
 
     # Load the model artifacts using joblib
-    artifacts = joblib.load("models/artifacts_xg4.joblib")
+    artifacts = joblib.load("models/artifacts_xg.joblib")
 
     # Unpack the artifacts
     num_features = artifacts["features"]["num_features"]
     fl_features = artifacts["features"]["fl_features"]
     cat_features = artifacts["features"]["cat_features"]
     imputer = artifacts["imputer"]
-    #scaler = artifacts ["scaler"]
     enc = artifacts["enc"]
     model = artifacts["model"]
 
@@ -38,9 +37,6 @@ def predict(input_dataset, output_dataset):
 
     # Apply imputer and encoder on data
     data[num_features] = imputer.transform(data[num_features])
-    # Standardize numerical features using StandardScaler
-    #data[num_features] = scaler.fit_transform(data[num_features])
-    
     data_cat = enc.transform(data[cat_features]).toarray()
 
     # Combine the numerical and one-hot encoded categorical columns
@@ -54,9 +50,7 @@ def predict(input_dataset, output_dataset):
 
     # Make predictions
     predictions = model.predict(data)
-    ## After fitting the best model
-    
-    #predictions = predictions[:10]  # just picking 10 to display sample output :-)
+    #predictions = predictions[:10] # just picking 10 to display sample output :-)
 
     ### -------- DO NOT TOUCH THE FOLLOWING LINES -------- ###
     # Save the predictions to a CSV file (in order of data input!)
