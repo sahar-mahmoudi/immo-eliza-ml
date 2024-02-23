@@ -179,7 +179,7 @@ def train():
         "enc": enc,
         "model": best_model,
     }
-    joblib.dump(model, "models/artifacts.joblib", compress="xz")
+    joblib.dump(artifacts, "models/artifacts.joblib", compress="xz")
     
     
 if __name__ == "__main__":
