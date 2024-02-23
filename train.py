@@ -17,27 +17,29 @@ import seaborn as sns
 def train():
     """Trains a linear regression model on the full dataset and stores output."""
     # Load the data
-    data = pd.read_csv("data/filtered_data.csv")
+    data = pd.read_csv("data/properties.csv")
 
     # Define features to use
-    num_features = ["nbr_frontages",'nbr_bedrooms',"latitude","total_area_sqm"]
+    num_features = ["nbr_frontages",'nbr_bedrooms',"latitude", "longitude", "total_area_sqm",'construction_year','surface_land_sqm']
     fl_features = ["fl_terrace", 'fl_garden', 'fl_swimming_pool','fl_floodzone']
-    cat_features = ["equipped_kitchen", "province",'heating_type' ,'state_building',"property_type", "epc"]
+    cat_features = ["equipped_kitchen", "province",'heating_type' ,'state_building',"property_type", "epc",'locality','subproperty_type']
 
     # Split the data into features and target
     X = data[num_features + fl_features + cat_features]
     y = data["price"]
 
     # Create bins for the 'price' variable
-    data['price_bins'] = pd.cut(data['price'], bins=5, labels=False)  # Adjust the number of bins as needed
+    #data['price_bins'] = pd.cut(data['price'], bins=5, labels=False)  # Adjust the number of bins as needed
 
     # Split the data into training and testing sets with stratification
     X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.20, random_state=505, stratify=data[['property_type', 'price_bins']]
+    #X, y, test_size=0.20, random_state=505, stratify=data[['property_type', 'price_bins']]
+    X, y, test_size=0.20, random_state=505
+
 )
 
     # Drop the temporary 'price_bins' column
-    data.drop('price_bins', axis=1, inplace=True)
+    #data.drop('price_bins', axis=1, inplace=True)
 
     # Impute missing values using SimpleImputer
     imputer = SimpleImputer(strategy="median")
@@ -52,7 +54,7 @@ def train():
     X_test[num_features] = scaler.transform(X_test[num_features])
 
     # Convert categorical columns with one-hot encoding using OneHotEncoder
-    enc = OneHotEncoder(drop='first')
+    enc = OneHotEncoder()
     enc.fit(X_train[cat_features])
     X_train_cat = enc.transform(X_train[cat_features]).toarray()
     X_test_cat = enc.transform(X_test[cat_features]).toarray()
