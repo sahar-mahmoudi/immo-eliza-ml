@@ -29,7 +29,7 @@ def predict(input_dataset, output_dataset):
     fl_features = artifacts["features"]["fl_features"]
     cat_features = artifacts["features"]["cat_features"]
     imputer = artifacts["imputer"]
-    scaler = artifacts ["scaler"]
+    #scaler = artifacts ["scaler"]
     enc = artifacts["enc"]
     model = artifacts["model"]
 
@@ -39,7 +39,7 @@ def predict(input_dataset, output_dataset):
     # Apply imputer and encoder on data
     data[num_features] = imputer.transform(data[num_features])
     # Standardize numerical features using StandardScaler
-    data[num_features] = scaler.fit_transform(data[num_features])
+    #data[num_features] = scaler.fit_transform(data[num_features])
     
     data_cat = enc.transform(data[cat_features]).toarray()
 
