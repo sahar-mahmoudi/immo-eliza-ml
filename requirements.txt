@@ -13,3 +13,5 @@ threadpoolctl==3.3.0
 tzdata==2024.1
 xgboost==1.12.0
 matplotlib==1.160
+seaborn==0.11.2
+
