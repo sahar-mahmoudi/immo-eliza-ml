@@ -40,7 +40,7 @@ def train():
     data.drop('price_bins', axis=1, inplace=True)
 
     # Impute missing values using SimpleImputer
-    imputer = SimpleImputer(strategy="mean")
+    imputer = SimpleImputer(strategy="median")
     imputer.fit(X_train[num_features])
     X_train[num_features] = imputer.transform(X_train[num_features])
     X_test[num_features] = imputer.transform(X_test[num_features])
