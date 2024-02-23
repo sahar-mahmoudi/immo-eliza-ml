@@ -44,8 +44,8 @@ def train():
     imputer.fit(X_train[num_features])
     X_train[num_features] = imputer.transform(X_train[num_features])
     X_test[num_features] = imputer.transform(X_test[num_features])
-    
-    
+
+
     # Standardize numerical features using StandardScaler
     scaler = StandardScaler()
     X_train[num_features] = scaler.fit_transform(X_train[num_features])
