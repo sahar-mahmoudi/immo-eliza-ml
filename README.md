@@ -54,12 +54,12 @@ The project is structured as follows:
 - **Categorical Features:**                 
   - ['province', 'heating_type', 'state_building', 'property_type', 'epc', 'locality', 'subproperty_type', 'region']
 
-**Model Training Data:** Split the model training data into training (80%) and testing (20%) sets through random sampling. 
 
 
 
 ## ⚙️ Model Training
 
+**Model Training Data:** Split the model training data into training (80%) and testing (20%) sets through random sampling.      
 **XGBoost Model:** Trained with the best hyperparameters obtained through RandomizedSearchCV.                                
 **Evaluation**: R² scores calculated for both training and testing sets.                                  
 
