@@ -1,6 +1,7 @@
 # 🏰✨ Immo Eliza ML: Predicting Real Estate Prices in Belgium
 
-Welcome to the Real Estate Price Prediction project by Immo Eliza! 🏡 This machine learning endeavor utilizes the powerful XGBoost algorithm to predict real estate prices in Belgium. Follow the comprehensive guide below to explore the project and start predicting property prices with confidence!
+Welcome to the Real Estate Price Prediction project by Immo Eliza! 🏡 In this machine learning project, we use the XGBoost algorithm to predict real estate prices in Belgium. Follow the guide below to explore the project and start predicting property prices with confidence!
+
 
 ## 🚀 Quick Start
 
@@ -23,6 +24,11 @@ Welcome to the Real Estate Price Prediction project by Immo Eliza! 🏡 This mac
 
    ```bash
    python train.py
+
+4. **Predict for unseen data:**
+
+   ```bash
+   python predict.py -i data/properties.csv -o output/predictions.csv
    
 
 ## 📊 Project Structure
