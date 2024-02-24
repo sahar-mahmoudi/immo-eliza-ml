@@ -43,9 +43,20 @@ The project is structured as follows:
 
 ## 🛠️ Data Preprocessing
 
-**Numerical Features:** Handled missing values using SimpleImputer with the mean strategy.        
-**Categorical Features:** Applied OneHotEncoder for one-hot encoding.         
-**Model Training Data:** Split the model training data into training (80%) and testing (20%) sets through random sampling.           
+**Numerical Features:** Handled missing values using SimpleImputer with the mean strategy. 
+**Boolean Features:** Encoded as dummy variables (1/0).
+**Categorical Features:** Applied OneHotEncoder for one-hot encoding. 
+**Feature List:**
+- **Numerical Features:**
+  - ['nbr_frontages', 'nbr_bedrooms', 'latitude', 'longitude', 'total_area_sqm', 'surface_land_sqm', 'terrace_sqm', 'garden_sqm']
+- **Boolean Features:**
+  - ['fl_terrace', 'fl_garden', 'fl_swimming_pool']
+- **Categorical Features:**
+  - ['province', 'heating_type', 'state_building', 'property_type', 'epc', 'locality', 'subproperty_type', 'region']
+
+**Model Training Data:** Split the model training data into training (80%) and testing (20%) sets through random sampling. 
+
+
 
 ## ⚙️ Model Training
 
