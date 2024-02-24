@@ -1,29 +1,65 @@
-# Model card
+# 🏰✨ Immo Eliza ML: Predicting Real Estate Prices in Belgium
 
-## Project context
+Welcome to the Real Estate Price Prediction project by Immo Eliza! 🏡 This machine learning endeavor utilizes the powerful XGBoost algorithm to predict real estate prices in Belgium. Follow the comprehensive guide below to explore the project and start predicting property prices with confidence!
 
-Short recap of the project context.
+## 🚀 Quick Start
 
-## Data
+1. **Clone the Repository:**
 
-Input dataset, target variable, features, ...
+   ```bash
+   git clone https://github.com/sahar-mahmoudi/immo-eliza-ml.git
 
-## Model details
+2. **Set Up Your Virtual Environment:**
 
-Models tested, final model chosen, ...
+   ```bash
+   python -m venv venv
 
-## Performance
+3. **Install Dependencies:**
 
-Performance metrics for the various models tested, visualizations, ...
+   ```bash
+   pip install -r requirements.txt
 
-## Limitations
+4. **Run the Training Script:**
 
-What are the limitations of your model?
+   ```bash
+   python train.py
+   
 
-## Usage
+## 📊 Project Structure
+The project is structured as follows:
 
-What are the dependencies, what scripts are there to train the model, how to generate predictions, ...
+**data:** Contains the cleaned dataset, "properties.csv."
+**models:** The trained XGBoost model and related artifacts.
+**plots:** Visualizations of model performance and residuals.
+**train.py, predict.py:** The source code for data preprocessing, model training, and visualization.
+**.gitignore:** Specifies files and folders to be ignored by version control.
+**README.md:** The detailed guide you are currently reading.
+**requirements.txt:** Lists project dependencies for easy setup.
 
-## Maintainers
+## 🛠️ Data Preprocessing
 
-Who to contact in case of questions or issues?
+**Numerical Features:** Handled missing values using SimpleImputer with the mean strategy.
+**Categorical Features:** Applied OneHotEncoder for one-hot encoding.
+**Model Training Data:** Split into training and testing sets with a stratified approach.
+
+## ⚙️ Model Training
+
+**XGBoost Model:** Trained with the best hyperparameters obtained through RandomizedSearchCV.
+**Evaluation**: R² scores calculated for both training and testing sets.
+
+
+## 📈 Visualizations
+
+**Actual vs. Predicted Prices:** Scatter plot showcasing model predictions on the test set.
+**Residual Plot:** Illustrates the distribution of residuals (actual - predicted).
+**Residual Distribution:** Histogram depicting the distribution of residuals.
+
+## 🔧 Model Artifacts
+
+**features:** Information about numerical, boolean, and categorical features.
+**imputer**: The SimpleImputer object used for handling missing values.
+**enc**: The OneHotEncoder object for categorical feature encoding.
+**model**: The trained XGBoost model.
+
+## 🤝 Contributing
+Contributions are encouraged! Feel free to open issues, propose enhancements, or submit pull requests.
