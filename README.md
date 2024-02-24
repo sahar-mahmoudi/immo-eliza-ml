@@ -29,7 +29,6 @@ Welcome to the Real Estate Price Prediction project by Immo Eliza! 🏡 In this 
 
    ```bash
    python predict.py -i data/properties.csv -o output/predictions.csv
-   
 
 ## 📊 Project Structure
 The project is structured as follows:
@@ -46,7 +45,7 @@ The project is structured as follows:
 
 **Numerical Features:** Handled missing values using SimpleImputer with the mean strategy.        
 **Categorical Features:** Applied OneHotEncoder for one-hot encoding.         
-**Model Training Data:** Split into training and testing sets with a stratified approach.           
+**Model Training Data:** Split the model training data into training (80%) and testing (20%) sets through random sampling.           
 
 ## ⚙️ Model Training
 
