@@ -44,21 +44,21 @@ The project is structured as follows:
 
 ## ⚙️ Model Training
 
-**XGBoost Model:** Trained with the best hyperparameters obtained through RandomizedSearchCV.           
-**Evaluation**: R² scores calculated for both training and testing sets.                 
+**XGBoost Model:** Trained with the best hyperparameters obtained through RandomizedSearchCV.                                
+**Evaluation**: R² scores calculated for both training and testing sets.                                  
 
 
 ## 📈 Visualizations
 
-**Actual vs. Predicted Prices:** Scatter plot showcasing model predictions on the test set.
-**Residual Plot:** Illustrates the distribution of residuals (actual - predicted).
-**Residual Distribution:** Histogram depicting the distribution of residuals.
+**Actual vs. Predicted Prices:** Scatter plot showcasing model predictions on the test set.               
+**Residual Plot:** Illustrates the distribution of residuals (actual - predicted).                
+**Residual Distribution:** Histogram depicting the distribution of residuals.                  
 
 ## 🔧 Model Artifacts
 
-**features:** Information about numerical, boolean, and categorical features.
-**imputer**: The SimpleImputer object used for handling missing values.
-**enc**: The OneHotEncoder object for categorical feature encoding.
+**features:** Information about numerical, boolean, and categorical features.             
+**imputer**: The SimpleImputer object used for handling missing values.              
+**enc**: The OneHotEncoder object for categorical feature encoding.               
 **model**: The trained XGBoost model.
 
 ## 🤝 Contributing
