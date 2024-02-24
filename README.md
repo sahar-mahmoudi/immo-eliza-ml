@@ -28,24 +28,24 @@ Welcome to the Real Estate Price Prediction project by Immo Eliza! 🏡 This mac
 ## 📊 Project Structure
 The project is structured as follows:
 
-**data:** Contains the cleaned dataset, "properties.csv."
-**models:** The trained XGBoost model and related artifacts.
-**plots:** Visualizations of model performance and residuals.
-**train.py, predict.py:** The source code for data preprocessing, model training, and visualization.
-**.gitignore:** Specifies files and folders to be ignored by version control.
-**README.md:** The detailed guide you are currently reading.
-**requirements.txt:** Lists project dependencies for easy setup.
+**data:** Contains the cleaned dataset, "properties.csv."    
+**models:** The trained XGBoost model and related artifacts.    
+**plots:** Visualizations of model performance and residuals.    
+**train.py, predict.py:** The source code for data preprocessing, model training, and visualization.    
+**.gitignore:** Specifies files and folders to be ignored by version control.    
+**README.md:** The detailed guide you are currently reading.     
+**requirements.txt:** Lists project dependencies for easy setup.  
 
 ## 🛠️ Data Preprocessing
 
-**Numerical Features:** Handled missing values using SimpleImputer with the mean strategy.
-**Categorical Features:** Applied OneHotEncoder for one-hot encoding.
-**Model Training Data:** Split into training and testing sets with a stratified approach.
+**Numerical Features:** Handled missing values using SimpleImputer with the mean strategy.        
+**Categorical Features:** Applied OneHotEncoder for one-hot encoding.         
+**Model Training Data:** Split into training and testing sets with a stratified approach.           
 
 ## ⚙️ Model Training
 
-**XGBoost Model:** Trained with the best hyperparameters obtained through RandomizedSearchCV.
-**Evaluation**: R² scores calculated for both training and testing sets.
+**XGBoost Model:** Trained with the best hyperparameters obtained through RandomizedSearchCV.           
+**Evaluation**: R² scores calculated for both training and testing sets.                 
 
 
 ## 📈 Visualizations
