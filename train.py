@@ -8,13 +8,15 @@ from xgboost import XGBRegressor
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def train():
+def train(data_path=None):
     """
     Train an XGBoost regression model to predict real estate prices.
 
     Parameters
     ----------
-    None
+    data_path : str, optional
+        The file path of the data.csv file. If not provided, assumes a default local path.
+
 
     Returns
     -------
@@ -35,8 +37,11 @@ def train():
     train()  # Train the XGBoost regression model.
 
     """
+    
+    if data_path is None:
+        data_path = "data/properties.csv"
     # Load the data
-    data = pd.read_csv("data/properties.csv")
+    data = pd.read_csv(data_path)
 
     # Define features to use
     num_features = ["nbr_frontages", 'nbr_bedrooms', "latitude", "longitude", "total_area_sqm",
